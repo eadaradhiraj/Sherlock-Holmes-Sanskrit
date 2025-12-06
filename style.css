@@ -1,0 +1,77 @@
+/* style.css */
+
+/* Basic Page Setup */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* GRID LAYOUT */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; 
+}
+
+/* HEADERS */
+.header-cell {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* CELLS */
+.cell {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+.cell:last-child {
+    border-right: none;
+}
+
+/* SANSKRIT FONT */
+.sanskrit-text {
+    font-family: 'Nirmala UI', 'Arial Unicode MS', sans-serif;
+    font-size: 20px;
+}
+
+/* INTERACTIVE SENTENCES (SEGMENTS) */
+.segment {
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.segment:hover {
+    background-color: #e3f2fd; /* Light blue hover */
+    color: #000;
+}
+
+/* ACTIVE HIGHLIGHT (Clicked) */
+.active-segment {
+    background-color: #ffeb3b; /* Yellow highlight */
+    color: #000;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
