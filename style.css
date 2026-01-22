@@ -19,7 +19,7 @@ h1 {
 /* GRID LAYOUT */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-template-columns: 1fr 1fr; /* Default: Two equal columns */
     max-width: 1400px;
     margin: 0 auto;
     background: white;
@@ -47,7 +47,8 @@ h1 {
     border-right: 1px solid #eee;
 }
 
-.cell:last-child {
+/* Remove right border for the last item in a row (Desktop view) */
+.cell:nth-child(even) {
     border-right: none;
 }
 
@@ -74,4 +75,50 @@ h1 {
     background-color: #ffeb3b; /* Yellow highlight */
     color: #000;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px; /* Reduce outer padding */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack into 1 column */
+    }
+
+    /* Adjust Headers for Mobile */
+    .header-cell {
+        position: static; /* Stop sticking to save screen space */
+        text-align: center;
+        font-size: 1rem;
+        padding: 10px;
+        display: none; /* OPTIONAL: Hide headers completely on mobile if obvious */
+    }
+
+    .cell {
+        padding: 15px; /* Slightly compact padding */
+        border-right: none; /* Remove vertical divider */
+    }
+
+    /* 
+       LOGIC: Group the Sanskrit and English pair together.
+       Assuming HTML structure is: [Sanskrit Cell] -> [English Cell] -> [Sanskrit Cell]...
+    */
+    
+    /* The Sanskrit Cell (Odd numbers in the list excluding headers) */
+    .cell:nth-of-type(odd) {
+        border-bottom: none; /* Remove separator between Sanskrit and its translation */
+        background-color: #fafafa; /* Slight grey background to indicate start of verse */
+        padding-bottom: 5px; /* Move text closer to translation */
+    }
+
+    /* The English Cell (Even numbers) */
+    .cell:nth-of-type(even) {
+        border-bottom: 4px solid #e0e0e0; /* Thick separator between different verses */
+        padding-top: 5px; /* Move text closer to Sanskrit above */
+    }
 }
