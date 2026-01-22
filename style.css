@@ -78,47 +78,57 @@ h1 {
 }
 
 /* =========================================
-   MOBILE RESPONSIVENESS
+   MOBILE RESPONSIVENESS (Max-width: 768px)
    ========================================= */
-
 @media screen and (max-width: 768px) {
-    body {
-        padding: 10px; /* Reduce outer padding */
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr; /* Stack into 1 column */
-    }
-
-    /* Adjust Headers for Mobile */
-    .header-cell {
-        position: static; /* Stop sticking to save screen space */
-        text-align: center;
-        font-size: 1rem;
-        padding: 10px;
-        display: none; /* OPTIONAL: Hide headers completely on mobile if obvious */
-    }
-
-    .cell {
-        padding: 15px; /* Slightly compact padding */
-        border-right: none; /* Remove vertical divider */
-    }
-
-    /* 
-       LOGIC: Group the Sanskrit and English pair together.
-       Assuming HTML structure is: [Sanskrit Cell] -> [English Cell] -> [Sanskrit Cell]...
-    */
     
-    /* The Sanskrit Cell (Odd numbers in the list excluding headers) */
-    .cell:nth-of-type(odd) {
-        border-bottom: none; /* Remove separator between Sanskrit and its translation */
-        background-color: #fafafa; /* Slight grey background to indicate start of verse */
-        padding-bottom: 5px; /* Move text closer to translation */
+    /* 1. Force the Container to Stack Vertically */
+    .grid-container {
+        grid-template-columns: 100% !important; /* Forces 1 column */
+        display: flex;       /* Fallback for older browsers */
+        flex-direction: column;
     }
 
-    /* The English Cell (Even numbers) */
-    .cell:nth-of-type(even) {
-        border-bottom: 4px solid #e0e0e0; /* Thick separator between different verses */
-        padding-top: 5px; /* Move text closer to Sanskrit above */
+    /* 2. Hide the Top Headers (Sanskrit/Translation titles) */
+    /* They take up too much space on mobile */
+    .header-cell {
+        display: none; 
+    }
+
+    /* 3. Reset Cell Borders for the Stack */
+    .cell {
+        border-right: none !important; /* Remove the vertical line */
+        border-bottom: none; /* Reset standard border */
+        width: 100%;         /* Ensure full width */
+        box-sizing: border-box; /* Includes padding in width calculation */
+    }
+
+    /* 4. STYLE THE SANSKRIT ROW (The Top Part of the pair) */
+    /* Assuming grid items are: Header, Header, Sanskrit, English, Sanskrit... */
+    /* If you have 2 headers, Sanskrit items are Odd numbers (3, 5, 7...) */
+    
+    .cell:nth-child(odd) {
+        background-color: #f8f9fa; /* Light grey background */
+        padding-bottom: 5px;       /* Reduce gap between Sanskrit and English */
+        border-top: 1px solid #ddd; /* Separator from previous pair */
+        font-weight: 600;
+    }
+
+    /* 5. STYLE THE ENGLISH ROW (The Bottom Part of the pair) */
+    .cell:nth-child(even) {
+        background-color: #ffffff;
+        padding-top: 5px;          /* Reduce gap to Sanskrit above */
+        padding-bottom: 25px;      /* Extra space before next verse starts */
+        color: #555;               /* Slightly softer text for translation */
+    }
+    
+    /* Remove padding from body to make full use of screen */
+    body {
+        padding: 0;
+    }
+    
+    .grid-container {
+        border-radius: 0; /* Remove rounded corners on mobile */
+        box-shadow: none;
     }
 }
