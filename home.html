@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +14,19 @@
             background: white;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         .chapter-list {
             list-style: none;
             padding: 0;
         }
+
         .chapter-list li {
             margin: 20px 0;
         }
+
         .chapter-link {
             text-decoration: none;
             font-size: 1.2rem;
@@ -33,6 +37,7 @@
             display: block;
             transition: all 0.2s ease;
         }
+
         .chapter-link:hover {
             background-color: #e3f2fd;
             border-color: #2196f3;
@@ -40,33 +45,51 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="toc-container">
         <h1>The Adventures of Sherlock Holmes</h1>
-        
+
         <ul class="chapter-list">
             <li>
-                <!-- Adjust 'story.html' if you named the file inside the folder differently -->
-                <a href="adventures-sherlock-holmes/beryl-coronet-1.html" class="chapter-link">
-                    <span style="font-size: 0.9rem; color: #666;">The adventure of the Beryl Coronet - part 1</span>
-                </a>
+                <span class="story-heading">The Adventure of the Beryl Coronet</span>
+                <ul>
+                    <li>
+                        <a href="adventures-sherlock-holmes/beryl-coronet/1.html" class="chapter-link">
+                            <span style="font-size: 0.9rem; color: #666;">Part 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adventures-sherlock-holmes/beryl-coronet/2.html" class="chapter-link">
+                            <span style="font-size: 0.9rem; color: #666;">Part 2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adventures-sherlock-holmes/beryl-coronet/3.html" class="chapter-link">
+                            <span style="font-size: 0.9rem; color: #666;">Part 3</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
-                <!-- Adjust 'story.html' if you named the file inside the folder differently -->
-                <a href="adventures-sherlock-holmes/beryl-coronet-2.html" class="chapter-link">
-                    <span style="font-size: 0.9rem; color: #666;">The adventure of the Beryl Coronet - part 2</span>
-                </a>
+                <span class="story-heading">A Scandal in Bohemia</span>
+                <ul>
+                    <li>
+                        <a href="adventures-sherlock-holmes/scandal-in-bohemia/1.html" class="chapter-link">
+                            <span style="font-size: 0.9rem; color: #666;">Part 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adventures-sherlock-holmes/scandal-in-bohemia/2.html" class="chapter-link">
+                            <span style="font-size: 0.9rem; color: #666;">Part 2</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li>
-                <!-- Adjust 'story.html' if you named the file inside the folder differently -->
-                <a href="adventures-sherlock-holmes/beryl-coronet-3.html" class="chapter-link">
-                    <span style="font-size: 0.9rem; color: #666;">The adventure of the Beryl Coronet - part 3</span>
-                </a>
-            </li>
-            <!-- You can add more chapters here later -->
         </ul>
     </div>
 
 </body>
+
 </html>
