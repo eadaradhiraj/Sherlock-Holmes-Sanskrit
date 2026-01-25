@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,73 +22,145 @@
             padding: 0;
         }
 
-        .chapter-list li {
+        .chapter-list > li {
             margin: 20px 0;
+            text-align: left;
+            display: block;
+        }
+
+        /* Story heading styles */
+        .story-heading {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            font-weight: bold;
+            padding: 15px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            transition: all 0.2s ease;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .story-heading:hover {
+            background-color: #e3f2fd;
+            border-color: #2196f3;
+        }
+
+        .story-heading::after {
+            content: '▼';
+            float: right;
+            transition: transform 0.2s ease;
+        }
+
+        .story-heading.active::after {
+            transform: rotate(180deg);
+        }
+
+        /* Part links styles */
+        .parts-list {
+            list-style: none;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: white;
+            border-left: 3px solid #2196f3;
+            margin: 0;
+        }
+
+        .parts-list.active {
+            max-height: 500px;
+            padding: 10px 0;
         }
 
         .chapter-link {
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #2c3e50;
-            padding: 10px 20px;
+            padding: 8px 20px;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
+            border-radius: 6px;
             display: block;
+            margin: 5px 20px;
             transition: all 0.2s ease;
         }
 
         .chapter-link:hover {
             background-color: #e3f2fd;
             border-color: #2196f3;
-            transform: translateY(-2px);
+            transform: translateX(5px);
         }
     </style>
 </head>
 
 <body>
-
     <div class="toc-container">
         <h1>The Adventures of Sherlock Holmes</h1>
 
         <ul class="chapter-list">
+            <!-- Beryl Coronet - 3 parts -->
             <li>
                 <span class="story-heading">The Adventure of the Beryl Coronet</span>
-                <ul>
-                    <li>
-                        <a href="adventures-sherlock-holmes/beryl-coronet/1.html" class="chapter-link">
-                            <span style="font-size: 0.9rem; color: #666;">Part 1</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="adventures-sherlock-holmes/beryl-coronet/2.html" class="chapter-link">
-                            <span style="font-size: 0.9rem; color: #666;">Part 2</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="adventures-sherlock-holmes/beryl-coronet/3.html" class="chapter-link">
-                            <span style="font-size: 0.9rem; color: #666;">Part 3</span>
-                        </a>
-                    </li>
+                <ul class="parts-list">
+                    <li><a href="adventures-sherlock-holmes/beryl-coronet/1.html" class="chapter-link">Part 1</a></li>
+                    <li><a href="adventures-sherlock-holmes/beryl-coronet/2.html" class="chapter-link">Part 2</a></li>
+                    <li><a href="adventures-sherlock-holmes/beryl-coronet/3.html" class="chapter-link">Part 3</a></li>
                 </ul>
             </li>
+
+            <!-- Scandal in Bohemia - 10 parts -->
             <li>
                 <span class="story-heading">A Scandal in Bohemia</span>
-                <ul>
-                    <li>
-                        <a href="adventures-sherlock-holmes/scandal-in-bohemia/1.html" class="chapter-link">
-                            <span style="font-size: 0.9rem; color: #666;">Part 1</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="adventures-sherlock-holmes/scandal-in-bohemia/2.html" class="chapter-link">
-                            <span style="font-size: 0.9rem; color: #666;">Part 2</span>
-                        </a>
-                    </li>
+                <ul class="parts-list">
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/1.html" class="chapter-link">Part 1</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/2.html" class="chapter-link">Part 2</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/3.html" class="chapter-link">Part 3</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/4.html" class="chapter-link">Part 4</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/5.html" class="chapter-link">Part 5</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/6.html" class="chapter-link">Part 6</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/7.html" class="chapter-link">Part 7</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/8.html" class="chapter-link">Part 8</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/9.html" class="chapter-link">Part 9</a></li>
+                    <li><a href="adventures-sherlock-holmes/scandal-in-bohemia/10.html" class="chapter-link">Part 10</a></li>
+                </ul>
+            </li>
+
+            <!-- Add more stories here following the same pattern -->
+            <!-- Example for Naval Treaty with 1 part available -->
+            <li>
+                <span class="story-heading">The Naval Treaty</span>
+                <ul class="parts-list">
+                    <li><a href="adventures-sherlock-holmes/naval-treaty/1.html" class="chapter-link">Part 1</a></li>
+                    <!-- Add more parts as you create them -->
                 </ul>
             </li>
         </ul>
     </div>
 
+    <script>
+        // Collapsible functionality
+        document.querySelectorAll('.story-heading').forEach(heading => {
+            heading.addEventListener('click', function() {
+                const partsList = this.nextElementSibling;
+                const isActive = partsList.classList.contains('active');
+                
+                // Close all other sections
+                document.querySelectorAll('.parts-list').forEach(list => {
+                    list.classList.remove('active');
+                });
+                document.querySelectorAll('.story-heading').forEach(h => {
+                    h.classList.remove('active');
+                });
+                
+                // Toggle current section
+                if (!isActive) {
+                    partsList.classList.add('active');
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
