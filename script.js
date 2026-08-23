@@ -1,6 +1,17 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    // TOC collapsible sections (index.html)
+    document.querySelectorAll('.story-heading').forEach(heading => {
+        heading.addEventListener('click', function () {
+            const partsList = this.nextElementSibling;
+            const isActive = partsList.classList.contains('active');
+            document.querySelectorAll('.parts-list').forEach(list => list.classList.remove('active'));
+            document.querySelectorAll('.story-heading').forEach(h => h.classList.remove('active'));
+            if (!isActive) { partsList.classList.add('active'); this.classList.add('active'); }
+        });
+    });
+
     const container = document.querySelector('.grid-container');
 
     if (container) {

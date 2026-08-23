@@ -132,3 +132,23 @@ h1 {
         box-shadow: none;
     }
 }
+
+/* =========================================
+   TOC / HOME PAGE
+   ========================================= */
+.toc-container { max-width: 800px; margin: 50px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
+.site-subtitle { color: #666; font-size: 1.1rem; margin: -20px 0 10px 0; }
+.stats-bar { background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 18px; margin: 20px 0 30px 0; font-size: 0.95rem; color: #555; }
+.collection-title { text-align: left; font-size: 1.6rem; color: #2c3e50; border-bottom: 2px solid #2196f3; padding-bottom: 8px; margin: 35px 0 15px 0; }
+.chapter-list { list-style: none; padding: 0; }
+.chapter-list>li { margin: 20px 0; text-align: left; display: block; }
+.story-heading { font-size: 1.2rem; color: #2c3e50; font-weight: bold; padding: 15px 20px; border: 1px solid #e0e0e0; border-radius: 8px; cursor: pointer; display: block; transition: all 0.2s ease; background: #f8f9fa; position: relative; }
+.story-heading:hover { background-color: #e3f2fd; border-color: #2196f3; }
+.story-heading::after { content: '▼'; float: right; transition: transform 0.2s ease; font-size: 0.8rem; margin-top: 4px; }
+.story-heading.active::after { transform: rotate(180deg); }
+.story-meta { font-weight: normal; font-size: 0.85rem; color: #888; margin-left: 10px; }
+.parts-list { list-style: none; padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; background: white; border-left: 3px solid #2196f3; margin: 0; }
+.parts-list.active { max-height: 2000px; padding: 10px 0; }
+.chapter-link { text-decoration: none; font-size: 1rem; color: #2c3e50; padding: 8px 20px; border: 1px solid #e0e0e0; border-radius: 6px; display: block; margin: 5px 20px; transition: all 0.2s ease; }
+.chapter-link:hover { background-color: #e3f2fd; border-color: #2196f3; transform: translateX(5px); }
+.single-link .chapter-link { text-align: center; background: #e3f2fd; }
